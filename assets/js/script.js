@@ -1,3 +1,4 @@
+
 var myQuestions = [
     {
       question: "Which day is Earth Day?",
@@ -44,7 +45,10 @@ var myQuestions = [
   var quizContainer = document.getElementById('quiz');
   var resultsContainer = document.getElementById('results');
   var submitButton = document.getElementById('submit');
-
+// on start, show the quiz
+startButton.onclick = function(){
+    myQuestions(questions, quizContainer);
+  }
   //create a function to generate a quiz.
   generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
   
