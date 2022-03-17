@@ -13,24 +13,27 @@
     </header>
 
     <main>
-        <section>
+        <!-- <section>
             <h1>This is EXAMPLE box for each question and ans</h1>
             <div class="container">
               <div class="box" data-number="Option 1" data-state="hidden"></div>
               <div class="box" data-number="Option 2" data-state="hidden"></div>
               <div class="box" data-number="Option 3" data-state="hidden"></div>
               <div class="box" data-number="Option 4" data-state="hidden"></div>
-        </section>
+        </section> -->
 
         <section>
-            <h2>I WANT TO DISPLAY, 1 QUESTION AT A TIME</h2>
-            <div id="quiz"> </div>
+            <h2>Please Select the Correct Answer: </h2>
+            <h2 id="questionText">question Text</h2>
+            <h2 id="answerText">answer Text</h2>
         </section>
-
         
-        <button id="submit">Choose Answer</button>
-        <button class="reset-button">Reset Quiz</button>
+        <button id="nextBtn">Next Question</button>
+
         <div id="results"></div>
+        
+        <!-- <button class="reset-button">Reset Quiz</button> -->
+        
 
       <section>
         <div class="card results">
@@ -39,11 +42,11 @@
           <h2>Wins: <span class="win">0 </span> </h2>
           <h2>Losses: <span class="lose">0</span></h2>
         </div>
-          <button class="reset-button">Reset Score</button>
+          <button id="results">Reset Score</button>
       </div>
           <div class= "card timer">
             <div class = "timer-text">
-            <div class="large-font timer-count">10</div>
+            <div class="large-font timer-count">60</div>
             <h3>seconds remaining</h3>
           </div>
         
