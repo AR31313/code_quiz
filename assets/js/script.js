@@ -57,22 +57,48 @@ var ai = 0 //answerIndex
 var answerText =document.querySelector ("#answerText");
 var nextQuestion =document.querySelector ("#nextBtn");
 var startbutton = document.querySelector(".start-button");
-// var quizContainer = document.getElementById('quiz');
 var questionText = document.querySelector("#questionText");
-var resultsContainer = document.getElementById('results');
+var resultsContainer = document.getElementById('#results');
 // var submitButton = document.getElementById('submit');
+
+//display the quiz upon hitting the start button
+startbutton.addEventListener("click", function () {
+    console.log("it works!");
+})
 
 //display next question after clicking NEXT the button.
 nextQuestion.addEventListener("click", () => {
     questionText.innerHTML=questions[qi].question;
     qi++;
-});
-//display next answer after clicking NEXT the button.
-nextQuestion.addEventListener("click", () => {
-    answerText.innerHTML=questions[qi].answer;
-    qi++;
+    displayOptions();
 });
 
+//function to display answer choices
+function displayOptions() {
+  answerText.innerHTML= "" //empty and create new button each time
+    var buttonA = document.createElement("button");
+    buttonA.textContent= questions[qi].answer.a;
+    
+    var buttonB = document.createElement("button");
+    buttonB.textContent= questions[qi].answer.b;
+
+    var buttonC = document.createElement("button");
+    buttonC.textContent= questions[qi].answer.c;
+    
+    var buttonD = document.createElement("button");
+    buttonD.textContent= questions[qi].answer.d;
+    console.log(questions[qi].answer.d);
+
+    answerText.appendChild(buttonA)
+    answerText.appendChild(buttonB)
+    answerText.appendChild(buttonC)
+    answerText.appendChild(buttonD)
+}
+
+
+// const submitBtn = document.querySelector("#submitBtn");
+// const goBackBtn = document.querySelector("#goBackBtn");
+// const clearScoresBtn = document.querySelector("#clearScoresBtn");
 
 // // The startGame function is called when the start button is clicked
 // function startGame() {
@@ -85,7 +111,16 @@ nextQuestion.addEventListener("click", () => {
 //     qi++;
 //     // startTimer()
 // }
-// // on start, show the quiz
-// startbutton.addEventListener("click", startGame);
-// console.log("it works!");
+// // answer buttons submit the users response to be checked for correct / incorrect, and run the appropriate function based on that result
+// ans1Btn.addEventListener("click", function () {
+//     i++;
+//     console.log("answer 1 picked");
+//     if (answerArray[0] !== question.correct) {
+//       wrongAnswerClicked();
+//     } else {
+//       correctAnswerClicked();
+//     }
+//     nextQuestion();
+//   });
+
 
