@@ -1,40 +1,35 @@
 //Questions for the quiz
-var myQuestion1 = [
+var myQuestion1 = 
     {
     question: "Which day is Earth Day?",
     answer: ["April 22","December 5","115th day of the Year","January 1"],
     correctAnswer: "0"
-}];
-var myQuestion2 = [
+};
+var myQuestion2 = 
     {
     question: "What country produces the most energy in the world?",
     answer: ['China','Iraq','USA','Geenland'],
     correctAnswer: '0'
-}];
-var myQuestion3 = [
+};
+var myQuestion3 = 
     {
     question: "Which substance makes up 78% of air?",
     answer: ['Noble Gases','Nitrogen','Carbon Dioxide','Oxygen'],
     correctAnswer: '1'
-}];
-var myQuestion4 = [
+};
+var myQuestion4 =
     {
     question: "Water is found in which of the following:",
     answer: ['Plants','Animals','Fog','All of the above'],
     correctAnswer: '3'
-}];
+};
 
 var questions = [myQuestion1, myQuestion2, myQuestion3, myQuestion4]
-var answers = [myQuestion1, myQuestion2, myQuestion3, myQuestion4];
+// var answers = [myQuestion1, myQuestion2, myQuestion3, myQuestion4];
 var userAnswer = '';
 var numCorrect = 0;
 
-// for (let i = 0; i < questions.length; i++) {
-//     if(questions[i].correctAnswer == "b"){
-//         console.log("correct")
-//     }
-    
-// }
+
 
 var qi = 0 //questionIndex
 var ai = 0 //answerIndex
@@ -47,7 +42,7 @@ var quizContainer = document.querySelector(".quizContainer");
 // var submitButton = document.getElementById('submit');
 
 //display the quiz upon hitting the start button
-startbutton.addEventListener("click", function () {
+startbutton.addEventListener("click", function (event) {
     var element = event.target;
     console.log("it works!1");
 
@@ -99,25 +94,31 @@ nextQuestion.addEventListener("click", () => {
     console.log(qi);
 });
 
+for (let i = 0; i < questions.length; i++) {
+    if(questions[0].correctAnswer == "0"){
+        console.log("correct")
+    }
+    
+}
 //function to display answer choices
 function displayOptions() {
   //empty and create new button each time
   answerText.innerHTML= "" 
     var buttonA = document.createElement("button");
-    buttonA.textContent= questions[qi].answer.a;
-    console.log(questions[qi].answer.a);
+    buttonA.textContent= questions[qi].answer[0];
+    // console.log(questions[qi].answer[ai]);
 
     var buttonB = document.createElement("button");
-    buttonB.textContent= questions[qi].answer.b;
-    console.log(questions[qi].answer.b);
+    buttonB.textContent= questions[qi].answer[1];
+    // console.log(questions[qi].answer[0]);
 
     var buttonC = document.createElement("button");
-    buttonC.textContent= questions[qi].answer.c;
-    console.log(questions[qi].answer.c);
+    buttonC.textContent= questions[qi].answer[2];
+    // console.log(questions[qi].answer[1]);
 
     var buttonD = document.createElement("button");
-    buttonD.textContent= questions[qi].answer.d;
-    console.log(questions[qi].answer.d);
+    buttonD.textContent= questions[qi].answer[3];
+    // console.log(questions[qi].answer[3]);
 
     answerText.appendChild(buttonA)
     answerText.appendChild(buttonB)
