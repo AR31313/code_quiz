@@ -1,44 +1,28 @@
 //Questions for the quiz
-var myQuestion1 = {
+var myQuestion1 = [
+    {
     question: "Which day is Earth Day?",
-    answer: {
-        a: 'April 22',
-        b: 'December 5',
-        c: '115th day of the Year',
-        d: 'January 1'
-    },
-    correctAnswer: 'a'
-};
-var myQuestion2 = {
+    answer: ["April 22","December 5","115th day of the Year","January 1"],
+    correctAnswer: "0"
+}];
+var myQuestion2 = [
+    {
     question: "What country produces the most energy in the world?",
-    answer: {
-        a: 'China',
-        b: 'Iraq',
-        c: 'USA',
-        d: 'Geenland'
-    },
-    correctAnswer: 'a'
-};
-var myQuestion3 = {
+    answer: ['China','Iraq','USA','Geenland'],
+    correctAnswer: '0'
+}];
+var myQuestion3 = [
+    {
     question: "Which substance makes up 78% of air?",
-    answer: {
-        a: 'Noble Gases',
-        b: 'Nitrogen',
-        c: 'Carbon Dioxide',
-        d: 'Oxygen'
-    },
-    correctAnswer: 'b'
-};
-var myQuestion4 = {
+    answer: ['Noble Gases','Nitrogen','Carbon Dioxide','Oxygen'],
+    correctAnswer: '1'
+}];
+var myQuestion4 = [
+    {
     question: "Water is found in which of the following:",
-    answer: {
-        a: 'Plants',
-        b: 'Animals',
-        c: 'Fog',
-        d: 'All of the above'
-    },
-    correctAnswer: 'd'
-};
+    answer: ['Plants','Animals','Fog','All of the above'],
+    correctAnswer: '3'
+}];
 
 var questions = [myQuestion1, myQuestion2, myQuestion3, myQuestion4]
 var answers = [myQuestion1, myQuestion2, myQuestion3, myQuestion4];
@@ -62,13 +46,13 @@ var resultsContainer = document.getElementById('#results');
 var quizContainer = document.querySelector(".quizContainer");
 // var submitButton = document.getElementById('submit');
 
-// //display the quiz upon hitting the start button
+//display the quiz upon hitting the start button
 startbutton.addEventListener("click", function () {
     var element = event.target;
     console.log("it works!1");
 
 // Use an if statement to conditionally display quiz
-    if (element.matches (".start-button")){
+    if (element.matches(".start-button")){
         var state = element.getAttribute("data-view");
         if (state==="hidden"){
             //change the data-view attribute's value
@@ -104,7 +88,9 @@ startbutton.addEventListener("click", function () {
 //     }
 // });
 
-
+function initTimer() {
+    timeLeft = 60;
+  }
 //display next question after clicking NEXT the button.
 nextQuestion.addEventListener("click", () => {
     questionText.innerHTML=questions[qi].question;
