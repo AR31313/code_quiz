@@ -59,32 +59,76 @@ var nextQuestion =document.querySelector ("#nextBtn");
 var startbutton = document.querySelector(".start-button");
 var questionText = document.querySelector("#questionText");
 var resultsContainer = document.getElementById('#results');
+var quizContainer = document.querySelector(".quizContainer");
 // var submitButton = document.getElementById('submit');
 
-//display the quiz upon hitting the start button
+// //display the quiz upon hitting the start button
 startbutton.addEventListener("click", function () {
-    console.log("it works!");
-})
+    var element = event.target;
+    console.log("it works!1");
+
+// Use an if statement to conditionally display quiz
+    if (element.matches (".start-button")){
+        var state = element.getAttribute("data-view");
+        if (state==="hidden"){
+            //change the data-view attribute's value
+            element.setAttribute ("data-view","visible");
+            console.log("it works!2");
+    }   else {
+        // 'Hide' the number by setting .textContent to an empty string
+        element.textContent= "";
+        // Use .setAttribute() method
+        element.setAttribute("data-state", "hidden")
+        console.log("it works!3");
+        }
+    }
+});
+
+// //add eventlistner to the target container
+// quizContainer.addEventListener("click", function (event){
+//     var element = event.target;
+//     console.log("it works!1");
+//     if (element.matches (".start-button")){
+//         var state = element.getAttribute("data-view");
+//         if (state==="hidden"){
+//             //change the data-view attribute's value
+//             element.setAttribute ("data-view","visible");
+//             console.log("it works!2");
+//     }   else {
+//         // 'Hide' the number by setting .textContent to an empty string
+//         element.textContent= "";
+//         // Use .setAttribute() method
+//         element.setAttribute("data-state", "hidden")
+//         console.log("it works!3");
+//         }
+//     }
+// });
+
 
 //display next question after clicking NEXT the button.
 nextQuestion.addEventListener("click", () => {
     questionText.innerHTML=questions[qi].question;
     qi++;
     displayOptions();
+    console.log(qi);
 });
 
 //function to display answer choices
 function displayOptions() {
-  answerText.innerHTML= "" //empty and create new button each time
+  //empty and create new button each time
+  answerText.innerHTML= "" 
     var buttonA = document.createElement("button");
     buttonA.textContent= questions[qi].answer.a;
-    
+    console.log(questions[qi].answer.a);
+
     var buttonB = document.createElement("button");
     buttonB.textContent= questions[qi].answer.b;
+    console.log(questions[qi].answer.b);
 
     var buttonC = document.createElement("button");
     buttonC.textContent= questions[qi].answer.c;
-    
+    console.log(questions[qi].answer.c);
+
     var buttonD = document.createElement("button");
     buttonD.textContent= questions[qi].answer.d;
     console.log(questions[qi].answer.d);
@@ -96,9 +140,9 @@ function displayOptions() {
 }
 
 
-// const submitBtn = document.querySelector("#submitBtn");
-// const goBackBtn = document.querySelector("#goBackBtn");
-// const clearScoresBtn = document.querySelector("#clearScoresBtn");
+// var submitBtn = document.querySelector("#submitBtn");
+// var goBackBtn = document.querySelector("#goBackBtn");
+// var clearScoresBtn = document.querySelector("#clearScoresBtn");
 
 // // The startGame function is called when the start button is clicked
 // function startGame() {
