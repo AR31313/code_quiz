@@ -64,31 +64,31 @@ var quizContainer = document.querySelector(".quizContainer");
 //     }
 // });
 
-//show the quiz after hitting 'Start' Button
+
 var toggleBtn =document.querySelector('.start-button');
 var quizContainer = document.querySelector('.quizContainer');
 quizContainer.style.display = "none"
 
+//show the quiz after hitting 'Start' Button
 toggleBtn.addEventListener('click',() => {
     if(quizContainer.style.display === "none") {
     quizContainer.style.display = "block" ;
     } else{
         quizContainer.style.display === 'none';
+        toggleBtn.innerHTML="RESTART";
         console.log('it works!');
     }
 });
 
-//display next question after clicking NEXT the button.
+//display next questions after clicking QUESTION the button.
 nextQuestion.addEventListener("click", () => {
     questionText.innerHTML=questions[qi].question;
-    qi++;
-    displayOptions();
+ displayOptions();
     console.log(qi);
     console.log(ai);
 });
 
 //function to display answer choices
-
 function displayOptions() {
   //empty and create new button each time
   answerText.innerHTML= "" 
@@ -107,7 +107,7 @@ function displayOptions() {
     var buttonD = document.createElement("button");
     buttonD.textContent= questions[qi].answer[3];
     console.log(questions[qi].answer[ai]);
-
+    qi++;
     answerText.appendChild(buttonA)
     answerText.appendChild(buttonB)
     answerText.appendChild(buttonC)
