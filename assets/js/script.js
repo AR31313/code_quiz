@@ -113,11 +113,11 @@ function displayOptions() {
     answerText.appendChild(buttonC)
     answerText.appendChild(buttonD)
 
-    // for (let i = 0; i < questions.length; i++) {
-    //     if(question.answer === correctAnswer){
-    //         console.log("correct")
-    //     }  
-    // }
+    for (let i = 0; i < questions.length; i++) {
+        if(questions[qi].answer === correctAnswer){
+            console.log("correct")
+        }  
+    }
 }
 // var userAnswer = '';
 // var numCorrect = 0;
