@@ -67,6 +67,7 @@ var quizContainer = document.querySelector(".quizContainer");
 //show the quiz after hitting 'Start' Button
 var toggleBtn =document.querySelector('.start-button');
 var quizContainer = document.querySelector('.quizContainer');
+quizContainer.style.display = "none"
 
 toggleBtn.addEventListener('click',() => {
     if(quizContainer.style.display === "none") {
