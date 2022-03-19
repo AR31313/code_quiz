@@ -34,7 +34,7 @@ var nextQuestion =document.querySelector ("#nextBtn");
 var startbutton = document.querySelector(".start-button");
 var questionText = document.querySelector("#questionText");
 var resultsContainer = document.getElementById('#results');
-// var quizContainer = document.querySelector(".quizContainer");
+var quizContainer = document.querySelector(".quizContainer");
 // var submitButton = document.querySelector("#submitButton");
 // var resetButton = document.querySelector("#resetScore");
 
@@ -43,25 +43,6 @@ var resultsContainer = document.getElementById('#results');
 //     var element = event.target;
 //     console.log("it works!1");
 
-// // Use an if statement to conditionally display quiz
-//     if (element.matches(".start-button")){
-//         //set a variable named STATE that detects the state of an TARGET when EventListner hears "CLICK"
-//         var state =element.getAttribute("data-state");
-//         if (state==="hidden"){
-//             //change the data-number attribute's value
-//             element.textContent = element.dataset.number;
-//             // Change the attributes visible value (Named by ourselves) (all it does is toggles)
-//             element.setAttribute ("data-number","visible");
-//             console.log("it works!2");
-//     }   else {
-//         // 'Hide' the number by setting .textContent to an empty string
-//         element.textContent= "";
-//         // Use .setAttribute() method
-//         element.setAttribute("data-state", "hidden")
-//         console.log("it works!3");
-//         }
-//     }
-// });
 
 // //add eventlistner to the target container
 // quizContainer.addEventListener("click", function (event){
@@ -83,19 +64,7 @@ var resultsContainer = document.getElementById('#results');
 //     }
 // });
 
-
-//display next question after clicking NEXT the button.
-
-// startbutton.addEventListener("click", () => {
-//     questionText.innerHTML=questions[qi].question;
-//     qi++;
-//     displayOptions();
-//     console.log(qi);
-//     console.log(ai);
-// });
-
-
-//show & hide quiz
+//show the quiz after hitting 'Start' Button
 var toggleBtn =document.querySelector('.start-button');
 var quizContainer = document.querySelector('.quizContainer');
 
@@ -108,38 +77,47 @@ toggleBtn.addEventListener('click',() => {
     }
 });
 
-// //function to display answer choices
+//display next question after clicking NEXT the button.
+nextQuestion.addEventListener("click", () => {
+    questionText.innerHTML=questions[qi].question;
+    qi++;
+    displayOptions();
+    console.log(qi);
+    console.log(ai);
+});
 
-// function displayOptions() {
-//   //empty and create new button each time
-//   answerText.innerHTML= "" 
-//     var buttonA = document.createElement("button");
-//     buttonA.textContent= questions[qi].answer[0];
-//     console.log(questions[qi].answer[ai]);
+//function to display answer choices
 
-//     var buttonB = document.createElement("button");
-//     buttonB.textContent= questions[qi].answer[1];
-//     console.log(questions[qi].answer[ai]);
+function displayOptions() {
+  //empty and create new button each time
+  answerText.innerHTML= "" 
+    var buttonA = document.createElement("button");
+    buttonA.textContent= questions[qi].answer[0];
+    console.log(questions[qi].answer[ai]);
 
-//     var buttonC = document.createElement("button");
-//     buttonC.textContent= questions[qi].answer[2];
-//     console.log(questions[qi].answer[ai]);
+    var buttonB = document.createElement("button");
+    buttonB.textContent= questions[qi].answer[1];
+    console.log(questions[qi].answer[ai]);
 
-//     var buttonD = document.createElement("button");
-//     buttonD.textContent= questions[qi].answer[3];
-//     console.log(questions[qi].answer[ai]);
+    var buttonC = document.createElement("button");
+    buttonC.textContent= questions[qi].answer[2];
+    console.log(questions[qi].answer[ai]);
 
-//     answerText.appendChild(buttonA)
-//     answerText.appendChild(buttonB)
-//     answerText.appendChild(buttonC)
-//     answerText.appendChild(buttonD)
+    var buttonD = document.createElement("button");
+    buttonD.textContent= questions[qi].answer[3];
+    console.log(questions[qi].answer[ai]);
+
+    answerText.appendChild(buttonA)
+    answerText.appendChild(buttonB)
+    answerText.appendChild(buttonC)
+    answerText.appendChild(buttonD)
 
     // for (let i = 0; i < questions.length; i++) {
     //     if(question.answer === correctAnswer){
     //         console.log("correct")
     //     }  
     // }
-// }
+}
 // var userAnswer = '';
 // var numCorrect = 0;
 
