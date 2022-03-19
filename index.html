@@ -13,10 +13,12 @@
     </header>
 
     <main>
-      <div class = "quizContainer" data-number="=1"data-state="hidden">
+      <div id="welcomeDiv"  style="display:none;">
+    
+      <div class="quizContainer">
        
         <section>
-            <h2>Please Select the Correct Answer </h2>
+            <h3>Please Select the Correct Answer </h3>
             
               <h2 id="questionText"></h2>
               <h2 id="answerText"></h2>
@@ -37,14 +39,15 @@
               <h2>Losses: <span class="lose">0</span></h2>
             </div>
           </div>
-          <button id="results">Reset Score</button>
+          <button id="submitButton">Submit Score</button>
+          <button id="resetScore">Reset Score</button>
           <div class= "card timer">
             <div class = "timer-text"></div>
             <div class="large-font timer-count">60</div>
             <h3>seconds remaining</h3>
           </div>
         </div>
-      </div>
+      </div> 
       </section>
     </main>
 
