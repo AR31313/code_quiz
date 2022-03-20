@@ -4,17 +4,18 @@ var qi = 0 //questionIndex
 var ai = 0 //answerIndex
 var userInitial= [];
 var counter = 0;
+const startingMinutes = 1;
+let time = startingMinutes *60;
 
-function startTimer(){
-    var timer = select('#timer');
-    timer.html (counter);
+const countdownEL =document.getElementById('countdown');
+setInterval (updatedCountdown,1000);
 
-function timeIt (){
-    counter ++;
-    timer.html (counter);
-    }
-    setInterval(timeEL,1000);
+function updatedCountdown (){
+    let seconds = time % 60;
+    countdownEL.innerHTML =`${seconds}`;
+    time--;
 }
+
 var myQuestion1 = 
     {
     question: "Which day is Earth Day?",
@@ -43,7 +44,7 @@ var myQuestion4 =
 var questions = [myQuestion1, myQuestion2, myQuestion3, myQuestion4]
 // var answers = [myQuestion1, myQuestion2, myQuestion3, myQuestion4];
 
-var timeEL =document.querySelector ('.large-font timer-text');
+
 var answerText =document.querySelector ("#answerText");
 var nextQuestion =document.querySelector ("#nextBtn");
 var startbutton = document.querySelector(".start-button");
