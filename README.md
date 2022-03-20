@@ -25,4 +25,5 @@ https://github.com/AR31313/code_quiz
 https://ar31313.github.io/code_quiz/
 
 ![Screenshot of the deployed application] (https://raw.githubusercontent.com/AR31313/code_quiz/main/assets/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/96843377/159148309-5faef8d4-0f7b-401b-9633-972dadd11f44.png)
 
