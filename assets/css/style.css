@@ -71,6 +71,7 @@
     margin-top: 50px;
     background-color: white;
     border-radius: 8px;
+    
   }
   
   .question{
@@ -98,6 +99,7 @@
   .results {
     width: 30vw;
     height: 400px;
+    
   }
   
   .card {
@@ -113,6 +115,10 @@
   
   .large-font {
     font-size: 3.5em;
+    text-align:center;
+  }
+  .h3 {
+    font-size: 40px;
     text-align:center;
   }
   
@@ -155,5 +161,3 @@
     .timer {
       height: 200px;
     }
-   
-  

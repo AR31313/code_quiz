@@ -3,17 +3,21 @@
 var qi = 0 //questionIndex
 var ai = 0 //answerIndex
 var userInitial= [];
-var counter = 0;
 const startingMinutes = 1;
 let time = startingMinutes *60;
 
 const countdownEL =document.getElementById('countdown');
 setInterval (updatedCountdown,1000);
-
+//function called updatedCountdown that takes seconds as an argument:
 function updatedCountdown (){
     let seconds = time % 60;
     countdownEL.innerHTML =`${seconds}`;
     time--;
+    //if statement that executes when counter is less than 0:
+         if (time < 0 ) {
+             clearInterval(startingMinutes);
+            console.log('Ding! Time is UP');
+          }
 }
 
 var myQuestion1 = 
@@ -42,21 +46,18 @@ var myQuestion4 =
 };
 
 var questions = [myQuestion1, myQuestion2, myQuestion3, myQuestion4]
-// var answers = [myQuestion1, myQuestion2, myQuestion3, myQuestion4];
-
-
-var answerText =document.querySelector ("#answerText");
-var nextQuestion =document.querySelector ("#nextBtn");
 var startbutton = document.querySelector(".start-button");
+var nextQuestion =document.querySelector ("#nextBtn");
+var quizContainer = document.querySelector(".quizContainer");
+var answerText =document.querySelector ("#answerText");
 var questionText = document.querySelector("#questionText");
 var resultsContainer = document.getElementById('#results');
-var quizContainer = document.querySelector(".quizContainer");
+
 // var submitButton = document.querySelector("#submitButton");
 // var resetButton = document.querySelector("#resetScore");
 
 // //display the quizContainer upon hitting the START button
-var toggleBtn =document.querySelector('.start-button');
-var quizContainer = document.querySelector('.quizContainer');
+var toggleBtn =document.querySelector('.start-button'); 
 quizContainer.style.display = "none"
 
 
@@ -105,23 +106,23 @@ function displayOptions() {
     answerText.appendChild(buttonD)
 
 // when the user clicks on button,then check if answer is correct
-    buttonA.addEventListener('click', function () {
-       
-        if(questions[qi].answer === questions[qi].correctAnswer){
-            console.log("correct")
+    buttonA.addEventListener('click', function (event) {
+        var userAnswer = event.target;
+        if(userAnswer === questions[qi].correctAnswer){
+            console.log("event")
         }  else (console.log("incorrect"))
         return;
     });
-    buttonB.addEventListener('click', function () {
+    buttonB.addEventListener('click', function (event) {
        
         if(questions[qi].answer === questions[qi].correctAnswer){
-            console.log("correct")
+            console.log("correct3")
         }  
     });
-    buttonC.addEventListener('click', function () {
+    buttonC.addEventListener('click', function (event) {
        
         if(questions[qi].answer === questions[qi].correctAnswer){
-            console.log("correct")
+            console.log("correct4")
         }  
     });
     buttonD.addEventListener('click', function () {
@@ -131,22 +132,6 @@ function displayOptions() {
         }  
     });
 }
-// var timeEl = document.querySelector(".card-timer");
-// //function called startCountdown that takes seconds as an argument:
-// function startCountdown (seconds){
-//     let counter =seconds; //variable COUNTER keeps track of passing seconds
-//     //variable to store timing event function.
-//     const interval = setInterval (() => { //empty arrow function as the first argument. 
-//         console.log(counter);
-//         counter--;
-//         timeEl.textContent = "Timer: " + countDownTimer;
-//         //if statement that executes when counter is less than 0:
-//         if (counter < 0 ) {
-//             clearInterval(interval);
-//             console.log('Ding!');
-//           }
-//     }, 1000); 
-// }
 
 //if the answer is incorrect, then ALERT the user, then take away 10 seconds from the timer.
 
