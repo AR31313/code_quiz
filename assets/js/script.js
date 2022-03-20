@@ -72,7 +72,7 @@ toggleBtn.addEventListener('click',() => {
     }
 });
 
-//display next questions after clicking QUESTION the button.
+//display next questions after clicking SHOWQUESTION the button.
 nextQuestion.addEventListener("click", () => {
     questionText.innerHTML=questions[qi].question;
     displayOptions();
@@ -110,26 +110,29 @@ function displayOptions() {
         var userAnswer = event.target;
         if(userAnswer === questions[qi].correctAnswer){
             console.log("event")
-        }  else (console.log("incorrect"))
+        }  else (console.log("Correct!"))
         return;
     });
     buttonB.addEventListener('click', function (event) {
-       
-        if(questions[qi].answer === questions[qi].correctAnswer){
+        var userAnswer = event.target;
+        if(userAnswer === questions[qi].correctAnswer){
             console.log("correct3")
-        }  
+        }  else (console.log("Correct!"))
+        return;
     });
     buttonC.addEventListener('click', function (event) {
-       
-        if(questions[qi].answer === questions[qi].correctAnswer){
+        var userAnswer = event.target;
+        if(userAnswer === questions[qi].correctAnswer){
             console.log("correct4")
-        }  
+        }  else (console.log("Correct!"))
+        return;
     });
-    buttonD.addEventListener('click', function () {
-       
-        if(questions[qi].answer === questions[qi].correctAnswer){
+    buttonD.addEventListener('click', function (event) {
+        var userAnswer = event.target;
+        if(userAnswer === questions[qi].correctAnswer){
             console.log("correct")
-        }  
+        }  else (console.log("Correct!"))
+        return;
     });
 }
 
