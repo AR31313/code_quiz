@@ -1,4 +1,20 @@
-//Questions for the quiz
+
+// global data
+var qi = 0 //questionIndex
+var ai = 0 //answerIndex
+var userInitial= [];
+var counter = 0;
+
+function startTimer(){
+    var timer = select('#timer');
+    timer.html (counter);
+
+function timeIt (){
+    counter ++;
+    timer.html (counter);
+    }
+    setInterval(timeEL,1000);
+}
 var myQuestion1 = 
     {
     question: "Which day is Earth Day?",
@@ -27,8 +43,7 @@ var myQuestion4 =
 var questions = [myQuestion1, myQuestion2, myQuestion3, myQuestion4]
 // var answers = [myQuestion1, myQuestion2, myQuestion3, myQuestion4];
 
-var qi = 0 //questionIndex
-var ai = 0 //answerIndex
+var timeEL =document.querySelector ('.large-font timer-text');
 var answerText =document.querySelector ("#answerText");
 var nextQuestion =document.querySelector ("#nextBtn");
 var startbutton = document.querySelector(".start-button");
@@ -39,35 +54,10 @@ var quizContainer = document.querySelector(".quizContainer");
 // var resetButton = document.querySelector("#resetScore");
 
 // //display the quizContainer upon hitting the START button
-// startbutton.addEventListener("click", function (event) {
-//     var element = event.target;
-//     console.log("it works!1");
-
-
-// //add eventlistner to the target container
-// quizContainer.addEventListener("click", function (event){
-//     var element = event.target;
-//     console.log("it works!1");
-//     if (element.matches (".start-button")){
-//         var state = element.getAttribute("data-view");
-//         if (state==="hidden"){
-//             //change the data-view attribute's value
-//             element.setAttribute ("data-view","visible");
-//             console.log("it works!2");
-//     }   else {
-//         // 'Hide' the number by setting .textContent to an empty string
-//         element.textContent= "";
-//         // Use .setAttribute() method
-//         element.setAttribute("data-state", "hidden")
-//         console.log("it works!3");
-//         }
-//     }
-// });
-
-
 var toggleBtn =document.querySelector('.start-button');
 var quizContainer = document.querySelector('.quizContainer');
 quizContainer.style.display = "none"
+
 
 //show the quiz after hitting 'Start' Button
 toggleBtn.addEventListener('click',() => {
@@ -83,7 +73,7 @@ toggleBtn.addEventListener('click',() => {
 //display next questions after clicking QUESTION the button.
 nextQuestion.addEventListener("click", () => {
     questionText.innerHTML=questions[qi].question;
- displayOptions();
+    displayOptions();
     console.log(qi);
     console.log(ai);
 });
@@ -113,38 +103,69 @@ function displayOptions() {
     answerText.appendChild(buttonC)
     answerText.appendChild(buttonD)
 
-    for (let i = 0; i < questions.length; i++) {
-        if(questions[qi].answer === correctAnswer){
+// when the user clicks on button,then check if answer is correct
+    buttonA.addEventListener('click', function () {
+       
+        if(questions[qi].answer === questions[qi].correctAnswer){
+            console.log("correct")
+        }  else (console.log("incorrect"))
+        return;
+    });
+    buttonB.addEventListener('click', function () {
+       
+        if(questions[qi].answer === questions[qi].correctAnswer){
             console.log("correct")
         }  
-    }
+    });
+    buttonC.addEventListener('click', function () {
+       
+        if(questions[qi].answer === questions[qi].correctAnswer){
+            console.log("correct")
+        }  
+    });
+    buttonD.addEventListener('click', function () {
+       
+        if(questions[qi].answer === questions[qi].correctAnswer){
+            console.log("correct")
+        }  
+    });
 }
-// var userAnswer = '';
-// var numCorrect = 0;
-
-
-
-// // The startGame function is called when the start button is clicked
-// function startGame() {
-//     isWin = false;
-//     timerCount = 10;
-//     // Prevents start button from being clicked when round is in progress
-//     startbutton.disabled = true;
-//     // renderBlanks()
-//     questionText.innerHTML=questions[qi].question;
-//     qi++;
-//     // startTimer()
+// var timeEl = document.querySelector(".card-timer");
+// //function called startCountdown that takes seconds as an argument:
+// function startCountdown (seconds){
+//     let counter =seconds; //variable COUNTER keeps track of passing seconds
+//     //variable to store timing event function.
+//     const interval = setInterval (() => { //empty arrow function as the first argument. 
+//         console.log(counter);
+//         counter--;
+//         timeEl.textContent = "Timer: " + countDownTimer;
+//         //if statement that executes when counter is less than 0:
+//         if (counter < 0 ) {
+//             clearInterval(interval);
+//             console.log('Ding!');
+//           }
+//     }, 1000); 
 // }
-// // answer buttons submit the users response to be checked for correct / incorrect, and run the appropriate function based on that result
-// ans1Btn.addEventListener("click", function () {
-//     i++;
-//     console.log("answer 1 picked");
-//     if (answerArray[0] !== question.correct) {
-//       wrongAnswerClicked();
-//     } else {
-//       correctAnswerClicked();
-//     }
-//     nextQuestion();
-//   });
 
+//if the answer is incorrect, then ALERT the user, then take away 10 seconds from the timer.
 
+//if the answer is correct, then load next q's & a's.
+//a variable to store users Answer Choice
+var userAnswer = '';
+
+//repeat last process until all questions are asked.
+
+// when user answers last question, then hide quizContainer, then stop coutdown timer.
+
+//a variable to store the answers that are correct
+var numCorrect = 0;
+
+//score is submitted via SUBMIT SCORE btn or score is reset to 0-0 via RESET SCORE btn.
+//if user clicks SUBMIT SCORE btn then display a form input to collect user initials.
+//if user clicks RESET SCORE btn then hide the quizConatiner again(& START the Game again)
+
+// when the user clicks submit button, then open FORM to save initials+ score & STORE to localStorage.
+// if user submits their Initials then hide the quizcontainer again after they click OK TO submit & START the Game again
+
+// //Initializing of the Game
+// init();
