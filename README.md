@@ -24,6 +24,5 @@ https://github.com/AR31313/code_quiz
 * Live URL of the functional, deployed application: 
 https://ar31313.github.io/code_quiz/
 
-* Screenshot of the deployed application:
-![Alt text] (https://github.com/AR31313/code_quiz/blob/main/assets/Untitled.png)
+![Screenshot of the deployed application] (https://raw.githubusercontent.com/AR31313/code_quiz/main/assets/Untitled.png)
 
