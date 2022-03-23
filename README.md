@@ -4,6 +4,7 @@
  To build a timed coding quiz with multiple-choice questions. 
  This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. 
   
+![Untitled](https://user-images.githubusercontent.com/96843377/159148309-5faef8d4-0f7b-401b-9633-972dadd11f44.png)
 
 ## The Application
 * Has a clean, polished, and responsive user interface.
@@ -15,6 +16,7 @@
 
 * Application user experience is intuitive and easy to navigate.
 * Application user interface style is clean and polished.
+
 ```
 ---
 
@@ -24,5 +26,6 @@ https://github.com/AR31313/code_quiz
 * Live URL of the functional, deployed application: 
 https://ar31313.github.io/code_quiz/
 
-![Screenshot of the deployed application] (https://raw.githubusercontent.com/AR31313/code_quiz/main/assets/Untitled.png)
+
+
 
